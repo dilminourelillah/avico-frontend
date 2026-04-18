@@ -20,9 +20,7 @@
           "options": {
             "outputPath": "www",
             "index": "src/index.html",
-            "polyfills": [
-              "src/polyfills.ts"
-            ],
+            "polyfills": ["src/polyfills.ts"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -32,12 +30,8 @@
                 "output": "assets"
               }
             ],
-            "styles": [
-              "src/global.scss",
-              "src/theme/variables.scss"
-            ],
+            "styles": ["src/global.scss", "src/theme/variables.scss"],
             "scripts": [],
-            "main": "src/main.ts",
             "baseHref": "./"
           },
           "configurations": {
@@ -110,10 +104,7 @@
                 "output": "assets"
               }
             ],
-            "styles": [
-              "src/global.scss",
-              "src/theme/variables.scss"
-            ],
+            "styles": ["src/global.scss", "src/theme/variables.scss"],
             "scripts": []
           },
           "configurations": {
@@ -126,19 +117,14 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": [
-              "src/**/*.ts",
-              "src/**/*.html"
-            ]
+            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
           }
         }
       }
     }
   },
   "cli": {
-    "schematicCollections": [
-      "@ionic/angular-toolkit"
-    ],
+    "schematicCollections": ["@ionic/angular-toolkit"],
     "analytics": "a2345edc-d469-4bae-9847-a994ad63d0fe"
   },
   "schematics": {
