@@ -1,0 +1,7 @@
+{
+  "name": "AVICO",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

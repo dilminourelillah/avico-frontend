@@ -1,0 +1,115 @@
+.header-title {
+  text-align: center; /* ✅ يخلي Welcome User في الوسط */
+   border-top-left-radius: 25px; /* مقوس من فوق يسار */
+  border-top-right-radius: 25px;/* مقوس من فوق يمين */
+}
+
+
+.metrics-horizontal {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+   margin-top: 3vh;
+}
+
+.metric-card {
+  flex: 1 1 22%;
+  background: #f1f1f1;
+  border-radius: 12px;
+  padding: 12px;
+  margin: 4px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.metric-card .icon {
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+.metric-card .label {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.red { background: #ffcdd2; }
+.blue { background: #bbdefb; }
+.green { background: #c8e6c9; }
+.yellow { background: #fff9c4; }
+
+.alert-box {
+  background: #e3f2fd;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 12px 0;
+  font-size: 14px;
+  color: #0d47a1;
+  text-align: center;
+}
+
+.controls-horizontal {
+  display: flex;
+  justify-content: space-between;
+  margin: 16px 0;
+  flex-wrap: wrap;
+}
+
+.control-card {
+  flex: 1 1 30%;
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 12px;
+  margin: 4px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.control-card .icon {
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+.control-card .label {
+  font-size: 14px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.buttons-row {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+ion-button {
+  border-radius: 20px;
+}
+
+.chart-section {
+  margin: 16px 0;
+}
+
+.start-cycle-btn {
+  font-weight: bold;
+  border-radius: 25px;
+  background: #0d47a1;
+  color: #fff;
+  --border-radius: 25px;
+}
+.auto-card {
+  background:#f9f9f9;
+  color: #0d47a1;
+}
+
+.auto-note {
+  font-size: 12px;
+  margin-top: 6px;
+  text-align: center;
+  font-weight: bold;
+}

@@ -1,0 +1,139 @@
+.signup {
+  --background: #ffffff;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* القسم العلوي */
+.top-section {
+  background: #ffffff;
+  height: 35vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.logo {
+  width: 40vw;
+  max-width: 160px;
+  z-index: 2;
+}
+
+.wave {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+}
+
+/* القسم السفلي */
+.bottom-section {
+  background: #0d47a1;
+  flex-grow: 1;
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+/* Tabs */
+.switch-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5%;
+  border-radius: 25px;
+  overflow: hidden;
+  border: 2px solid #0d47a1;
+  background: #ffffff;
+}
+
+.tab {
+  flex: 1;
+  height: 6vh;
+  font-weight: bold;
+  font-size: 3.5vw;
+  max-font-size: 14px;
+  color: #0d47a1;
+  background: transparent;
+  border: none;
+}
+
+.left {
+  border-right: 2px solid #0d47a1;
+}
+
+.active {
+  background: #0d47a1;
+  color: #fff;
+}
+
+/* حقول الإدخال */
+.input-item {
+  margin-bottom: 3vh;
+  border-radius: 25px;
+  --background: #ffffff;
+  --border-radius: 25px;
+}
+
+.device-id {
+  --background: #ffffff;
+}
+
+/* زر التسجيل */
+.signup-btn {
+  margin-top: 15px;
+  border-radius: 25px;
+  font-weight: bold;
+  background: #1565c0;   /* أزرق */
+  color: #fff;           /* أبيض */
+  height: 6vh;
+  font-size: 18px;       /* حجم أوضح */
+  width: 70%;
+  align-self: center;
+  --border-radius: 25px;
+  display: flex;         /* توسيط النص */
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2); /* ظل خفيف */
+}
+
+.signup-btn:active {
+  transform: scale(0.97);
+  transition: transform 0.1s ease-in-out;
+}
+
+/* رسالة الخطأ */
+.error-message {
+  color: #ff5252;
+  text-align: center;
+  margin-top: 1vh;
+  font-weight: bold;
+}
+
+/* الفوتر */
+.footer {
+  text-align: center;
+  color: #fff;
+  margin-top: auto;
+}
+
+/* استجابة للشاشات الكبيرة */
+@media (min-width: 600px) {
+  .logo {
+    width: 160px;
+  }
+  .tab {
+    font-size: 14px;
+  }
+  .signup-btn {
+    font-size: 14px;
+    height: 45px;
+  }
+  .footer {
+    font-size: 12px;
+  }
+}

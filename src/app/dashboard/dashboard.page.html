@@ -1,0 +1,93 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="header-title">Welcome, User!</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="settings-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="dashboard" fullscreen>
+  <!-- Metrics -->
+  <div class="metrics-horizontal">
+    <div class="metric-card red">
+      <div class="icon">🌡️</div>
+      <div class="label">Temperature</div>
+      <strong>{{ temperature }} °C</strong>
+    </div>
+    <div class="metric-card blue">
+      <div class="icon">💧</div>
+      <div class="label">Humidity</div>
+      <strong>{{ humidity }} %</strong>
+    </div>
+    <div class="metric-card green">
+      <div class="icon">🧪</div>
+      <div class="label">Ammonia</div>
+      <strong>{{ nh3 }} PPM</strong>
+    </div>
+  </div>
+
+  <!-- Alerts -->
+  <div class="alert-box" *ngFor="let alert of alerts">
+    {{ alert.message }}
+  </div>
+
+  <!-- Controls -->
+  <div class="controls-horizontal">
+    <div class="control-card">
+      <div class="icon">🌬️</div>
+      <div class="label">Ventilation</div>
+      <div class="buttons-row">
+        <ion-button color="success" size="small" (click)="setVentilation(true)">ON</ion-button>
+        <ion-button color="medium" size="small" (click)="setVentilation(false)">OFF</ion-button>
+      </div>
+    </div>
+
+    <div class="control-card">
+      <div class="icon">🔥</div>
+      <div class="label">Heating</div>
+      <div class="buttons-row">
+        <ion-button color="success" size="small" (click)="setHeating(true)">ON</ion-button>
+        <ion-button color="medium" size="small" (click)="setHeating(false)">OFF</ion-button>
+      </div>
+    </div>
+
+    <div class="control-card">
+      <div class="icon">💡</div>
+      <div class="label">Lights</div>
+      <div class="buttons-row">
+        <ion-button color="success" size="small" (click)="setLights(true)">ON</ion-button>
+        <ion-button color="medium" size="small" (click)="setLights(false)">OFF</ion-button>
+      </div>
+    </div>
+
+    <div class="control-card auto-card">
+      <div class="icon">⚙️</div>
+      <div class="label">Auto Mode</div>
+      <div class="buttons-row">
+        <ion-button color="primary" size="small" (click)="toggleAutoMode()">Activate</ion-button>
+      </div>
+      <p class="auto-note" *ngIf="autoModeActive">
+        Devices adjust automatically based on thresholds.
+      </p>
+    </div>
+  </div>
+
+  <!-- Chart -->
+  <div class="chart-section">
+    <h3>Weekly Stats</h3>
+    <canvas id="weeklyChart"></canvas>
+  </div>
+
+  <!-- Start New Cycle -->
+  <ion-button expand="block" class="start-cycle-btn" (click)="goToNewCycle()">
+    Start New Cycle
+  </ion-button>
+</ion-content>

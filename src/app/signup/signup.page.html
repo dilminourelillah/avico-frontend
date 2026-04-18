@@ -1,0 +1,48 @@
+<ion-content class="signup" fullscreen>
+  <div class="top-section">
+    <img src="assets/logo.png" alt="App Logo" class="logo" />
+    <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path fill="#0d47a1" fill-opacity="1" 
+        d="M0,160L48,170.7C96,181,192,203,288,213.3C384,224,480,224,576,213.3C672,203,768,181,864,165.3C960,149,1056,139,1152,144C1248,149,1344,171,1392,181.3L1440,192L1440,320L0,320Z">
+      </path>
+    </svg>
+  </div>
+
+  <div class="bottom-section">
+    <div class="switch-tabs">
+      <button class="tab left" (click)="goToLogin()">LOGIN</button>
+      <button class="tab right active">SIGN UP</button>
+    </div>
+
+    <ion-item class="input-item">
+      <ion-input [(ngModel)]="username" placeholder="Username" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item class="input-item">
+      <ion-input [(ngModel)]="email" placeholder="Email" type="email"></ion-input>
+    </ion-item>
+
+    <ion-item class="input-item">
+      <ion-input [(ngModel)]="phone" placeholder="Phone Number" type="tel"></ion-input>
+    </ion-item>
+
+    <ion-item class="input-item device-id">
+      <ion-input [(ngModel)]="deviceId" placeholder="Device ID" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item class="input-item">
+      <ion-input [(ngModel)]="password" placeholder="Password" type="password"></ion-input>
+    </ion-item>
+
+    <ion-button class="signup-btn" (click)="signup()" [disabled]="loading">
+      SIGN UP
+      <ion-spinner *ngIf="loading" name="crescent"></ion-spinner>
+    </ion-button>
+
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+
+    <p class="footer">Privacy Policy</p>
+  </div>
+</ion-content>

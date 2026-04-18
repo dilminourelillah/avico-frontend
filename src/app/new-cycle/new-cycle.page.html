@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar color="primary" class="header-bar">
+    <!-- زر الرجوع -->
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()" class="back-btn">←</ion-button>
+    </ion-buttons>
+
+    <!-- العنوان -->
+    <div class="header-title">
+      Start New Cycle
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="new-cycle" fullscreen>
+  <!-- عدد الدجاج -->
+  <div class="field-section">
+    <label class="field-label">🐔 Number of Chickens</label>
+    <ion-item class="input-item">
+      <ion-input [(ngModel)]="numChickens" type="number" placeholder="Enter number..."></ion-input>
+      <ion-icon name="egg-outline" slot="end" color="warning"></ion-icon>
+    </ion-item>
+  </div>
+
+  <!-- تاريخ البداية -->
+  <div class="field-section">
+    <label class="field-label">📅 Start Date</label>
+    <ion-item class="input-item small-calendar">
+      <ion-datetime [(ngModel)]="startDate" presentation="date" placeholder="Select date..."></ion-datetime>
+    </ion-item>
+  </div>
+
+  <!-- مدة الدورة -->
+  <div class="duration-section">
+    <label class="field-label">⏳ Cycle Duration:</label>
+    <div class="duration-buttons">
+      <ion-button [color]="duration===4 ? 'primary' : 'medium'" (click)="duration=4">4 Weeks</ion-button>
+      <ion-button [color]="duration===5 ? 'primary' : 'medium'" (click)="duration=5">5 Weeks</ion-button>
+      <ion-button [color]="duration===6 ? 'primary' : 'medium'" (click)="duration=6">6 Weeks</ion-button>
+    </div>
+  </div>
+
+  <!-- زر بدء الدورة -->
+  <ion-button expand="block" class="begin-btn" (click)="beginCycle()">
+    🚀 Begin Cycle
+  </ion-button>
+
+  <!-- نص صغير -->
+  <p class="footer-note">📊 Track and optimize your poultry farming cycle.</p>
+</ion-content>

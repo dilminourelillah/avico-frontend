@@ -1,0 +1,121 @@
+.login {
+  --background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0;
+}
+
+/* القسم العلوي */
+.top-section {
+  background: #ffffff;
+  height: 35vh;                /* نسبة من طول الشاشة */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.logo {
+  width: 40vw;                 /* نسبي لعرض الشاشة */
+  max-width: 160px;            /* حد أقصى */
+  z-index: 2;
+}
+
+.wave {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+}
+
+/* القسم السفلي */
+.bottom-section {
+  background: #0d47a1;
+  flex: 1;
+  padding: 5%;                 /* نسبي */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 65vh;
+}
+
+/* Tabs */
+.switch-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5%;
+  border-radius: 25px;
+  overflow: hidden;
+  border: 2px solid #0d47a1;
+  background: #ffffff;
+}
+
+.tab {
+  flex: 1;
+  height: 40px;
+  font-weight: bold;
+  font-size: 3.5vw;            /* نسبي */
+  max-font-size: 14px;         /* حد أقصى */
+  color: #0d47a1;
+  background: transparent;
+  border: none;
+}
+
+.left {
+  border-right: 2px solid #0d47a1;
+}
+
+.active {
+  background: #0d47a1;
+  color: #fff;
+}
+
+/* حقول الإدخال */
+.input-item {
+  margin-bottom: 12px;
+  border-radius: 25px;
+  --background: #ffffff;
+  --border-radius: 25px;
+}
+
+/* زر LOGIN */
+.login-btn {
+  margin-top: 15px;
+  border-radius: 25px;
+  font-weight: bold;
+  background: #1565c0;
+  color: #fff;
+  height: 6vh;                 /* نسبي */
+  font-size: 4vw;              /* نسبي */
+  max-font-size: 14px;
+  width: 70%;
+  align-self: center;
+  --border-radius: 25px;
+}
+
+/* الفوتر */
+.footer {
+  margin-top: 15px;
+  font-size: 3vw;              /* نسبي */
+  max-font-size: 12px;
+  color: #fff;
+  text-align: center;
+}
+
+/* Media Queries للشاشات الكبيرة */
+@media (min-width: 600px) {
+  .logo {
+    width: 160px;
+  }
+  .tab {
+    font-size: 14px;
+  }
+  .login-btn {
+    font-size: 14px;
+    height: 45px;
+  }
+  .footer {
+    font-size: 12px;
+  }
+}

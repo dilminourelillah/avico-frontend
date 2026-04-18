@@ -1,0 +1,84 @@
+/* الهيدر */
+.header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.back-btn {
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+  position: absolute;
+  left: 10px;
+}
+
+.header-title {
+  color: #fff;
+  font-weight: bold;
+  font-size: 5vw;
+  max-font-size: 20px;
+  text-align: center;
+}
+
+.field-section {
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+}
+
+.field-label {
+  font-weight: bold;
+  font-size: 4.5vw;
+  max-font-size: 18px;
+  color: #000;
+  margin-bottom: 1vh;
+  display: block;
+  padding-left: 15px;
+}
+
+.input-item {
+  border-radius: 12px;
+  --background: #ffffff;
+  --border-radius: 12px;
+  padding-left: 8px;
+}
+
+.small-calendar ion-datetime {
+  font-size: 3.5vw;
+  max-font-size: 14px;
+  padding-left: 15px;
+}
+
+.duration-section {
+  margin: 3vh 0;
+  text-align: center;
+}
+
+.duration-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 2vw;
+}
+
+.begin-btn {
+  margin-top: 4vh;
+  font-weight: bold;
+  border-radius: 25px;
+  background: #0d47a1;
+  color: #fff;
+  --border-radius: 25px;
+  font-size: 4vw;
+  max-font-size: 16px;
+  height: 6vh;
+}
+
+.footer-note {
+  text-align: center;
+  font-size: 3.5vw;
+  max-font-size: 14px;
+  color: #555;
+  margin-top: 2vh;
+}
