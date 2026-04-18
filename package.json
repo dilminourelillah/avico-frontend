@@ -11,8 +11,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "start": "ng serve",
-    "build": "ng build --prod"
+    "start": "ng serve"
+     
   },
   "private": true,
   "dependencies": {
