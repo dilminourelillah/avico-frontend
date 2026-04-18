@@ -56,7 +56,7 @@ export class SignupPage {
       password: this.password
     };
 
-    this.http.post('https://avico-api.onrender.com/api/users/register', userData)
+    this.http.post('https://avico-api.onrender.com/api/users/signup', userData)
       .subscribe({
         next: (res) => {
           console.log('✅ User registered:', res);
