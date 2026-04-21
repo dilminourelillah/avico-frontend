@@ -25,6 +25,12 @@ export class DashboardPage implements OnInit {
     this.loadMetrics();
     this.loadAlerts();
     this.loadChart();
+
+    // تحديث تلقائي كل 10 ثواني
+    setInterval(() => {
+      this.loadMetrics();
+      this.loadAlerts();
+    }, 10000);
   }
 
   loadMetrics() {
@@ -57,7 +63,7 @@ export class DashboardPage implements OnInit {
 
   setHeating(state: boolean) {
     if (!this.autoModeActive) {
-      this.http.post(`http://127.0.0.1:3000/api/control/${this.deviceId}`, { heaterStatus: state })
+      this.http.post(`https://avico-api.onrender.com/api/control/${this.deviceId}`, { heaterStatus: state })
         .subscribe(res => console.log('Heating updated:', res));
     }
   }
