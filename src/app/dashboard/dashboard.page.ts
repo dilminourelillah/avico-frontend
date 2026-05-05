@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common'; // ✅ ضروري لـ *ngIf و *ngFor
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [IonicModule, HttpClientModule],
+  imports: [CommonModule, IonicModule, HttpClientModule], // ✅ أضفنا CommonModule
   templateUrl: './dashboard.page.html',
   styleUrls: ['./dashboard.page.scss'],
 })
