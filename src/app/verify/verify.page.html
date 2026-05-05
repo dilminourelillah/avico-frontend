@@ -1,0 +1,39 @@
+<ion-content class="verify" fullscreen>
+  <!-- الجزء الأبيض فوق فيه اللوغو فقط -->
+  <div class="top-section">
+    <img src="assets/logo.png" alt="App Logo" class="logo" />
+  </div>
+
+  <!-- التموج الفاصل -->
+  <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <path fill="#0d47a1" fill-opacity="1" 
+      d="M0,160L48,170.7C96,181,192,203,288,213.3C384,224,480,224,576,213.3C672,203,768,181,864,165.3C960,149,1056,139,1152,144C1248,149,1344,171,1392,181.3L1440,192L1440,320L0,320Z">
+    </path>
+  </svg>
+
+  <!-- الجزء الأزرق تحت -->
+  <div class="bottom-section">
+    <h2>Check your email</h2>
+    <p>We sent you a 6-digit code. Enter it below to verify your account.</p>
+
+    <div class="code-inputs">
+      <ion-input maxlength="1" type="number" [(ngModel)]="code1"></ion-input>
+      <ion-input maxlength="1" type="number" [(ngModel)]="code2"></ion-input>
+      <ion-input maxlength="1" type="number" [(ngModel)]="code3"></ion-input>
+      <ion-input maxlength="1" type="number" [(ngModel)]="code4"></ion-input>
+      <ion-input maxlength="1" type="number" [(ngModel)]="code5"></ion-input>
+      <ion-input maxlength="1" type="number" [(ngModel)]="code6"></ion-input>
+    </div>
+
+    <ion-button class="verify-btn" (click)="verifyCode()" [disabled]="loading">
+      VERIFICATE
+      <ion-spinner *ngIf="loading" name="crescent"></ion-spinner>
+    </ion-button>
+
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+
+    <p class="footer">Privacy Policy</p>
+  </div>
+</ion-content>

@@ -1,16 +1,21 @@
-.header-title {
-  text-align: center; /* ✅ يخلي Welcome User في الوسط */
-   border-top-left-radius: 25px; /* مقوس من فوق يسار */
-  border-top-right-radius: 25px;/* مقوس من فوق يمين */
+/* ✅ نزع الفراغ الأبيض من فوق وتحت */
+ion-content.dashboard {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
 
+.header-title {
+  text-align: center;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
 
 .metrics-horizontal {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 12px;
+  margin-bottom: 0px;
   flex-wrap: wrap;
-   margin-top: 3vh;
+  margin-top: 1vh;
 }
 
 .metric-card {
@@ -51,10 +56,24 @@
   text-align: center;
 }
 
+.history-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 0px;     /* فراغ صغير فوق الزر */
+  margin-bottom: 0px;   /* نقصت بزاف الفراغ تحت الزر */
+}
+.history-btn {
+ font-weight: bold;
+  border-radius: 25px;
+  background: #0d47a1;
+  color: #fff;
+  --border-radius: 25px;
+}
+
 .controls-horizontal {
   display: flex;
   justify-content: space-between;
-  margin: 16px 0;
+  margin: 4px 0;
   flex-wrap: wrap;
 }
 
@@ -91,10 +110,6 @@ ion-button {
   border-radius: 20px;
 }
 
-.chart-section {
-  margin: 16px 0;
-}
-
 .start-cycle-btn {
   font-weight: bold;
   border-radius: 25px;
@@ -102,8 +117,9 @@ ion-button {
   color: #fff;
   --border-radius: 25px;
 }
+
 .auto-card {
-  background:#f9f9f9;
+  background: #f9f9f9;
   color: #0d47a1;
 }
 

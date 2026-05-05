@@ -32,11 +32,23 @@
       <div class="label">Ammonia</div>
       <strong>{{ nh3 }} PPM</strong>
     </div>
+    <div class="metric-card yellow">
+      <div class="icon">💡</div>
+      <div class="label">Light</div>
+      <strong>{{ light }} Lux</strong>
+    </div>
   </div>
 
   <!-- Alerts -->
   <div class="alert-box" *ngFor="let alert of alerts">
     {{ alert.message }}
+  </div>
+
+  <!-- ✅ زر Daily History في الوسط قبل الكونترولز -->
+  <div class="history-container">
+    <ion-button expand="block" class="history-btn" (click)="goToHistory()">
+      ⏰ VIEW DAILY HISTORY →
+    </ion-button>
   </div>
 
   <!-- Controls -->
@@ -78,12 +90,6 @@
         Devices adjust automatically based on thresholds.
       </p>
     </div>
-  </div>
-
-  <!-- Chart -->
-  <div class="chart-section">
-    <h3>Weekly Stats</h3>
-    <canvas id="weeklyChart"></canvas>
   </div>
 
   <!-- Start New Cycle -->

@@ -1,0 +1,79 @@
+.verify {
+  --background: #ffffff;
+}
+
+.top-section {
+  text-align: center;
+  background: #fff;
+  padding: 40px 20px;
+}
+
+.logo {
+  width: 90px;
+}
+
+.wave {
+  display: block;
+  width: 100%;
+  margin-top: -10px;
+}
+
+.bottom-section {
+  background: #0d47a1;
+  padding: 40px 20px;
+  text-align: center;
+  min-height: 50vh;
+}
+
+.bottom-section h2 {
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.bottom-section p {
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.code-inputs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.code-inputs ion-input {
+  width: 40px;
+  height: 50px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 8px;
+  --background: #fff;
+  color: #0d47a1;
+}
+
+.verify-btn {
+  background: #fff;
+  color: #fff;
+  border-radius: 25px;
+  font-weight: bold;
+  margin-top: 12px;
+  width: 100%;
+}
+
+.error-message {
+  color: #ffcccc;
+  font-size: 14px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.footer {
+  font-size: 12px;
+  color: #fff;
+  margin-top: 20px;
+  text-decoration: underline;
+}

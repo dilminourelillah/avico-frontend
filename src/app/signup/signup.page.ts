@@ -3,11 +3,12 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common'; // ✅ لازم هذا
 
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [IonicModule, FormsModule, HttpClientModule],
+  imports: [IonicModule, FormsModule, HttpClientModule, CommonModule], // ✅ زيد هنا
   templateUrl: './signup.page.html',
   styleUrls: ['./signup.page.scss'],
 })
@@ -26,28 +27,6 @@ export class SignupPage {
     this.loading = true;
     this.errorMessage = '';
 
-    // ✅ شروط التحقق
-    const emailPattern = /^[a-zA-Z0-9._%+-]+@(gmail|hotmail|yahoo)\.com$/;
-    if (!emailPattern.test(this.email)) {
-      this.errorMessage = 'Email لازم يكون @gmail.com أو @hotmail.com أو @yahoo.com';
-      this.loading = false;
-      return;
-    }
-
-    const phonePattern = /^0\d{9}$/; // يبدأ بـ0 ومجموع 10 أرقام
-    if (!phonePattern.test(this.phone)) {
-      this.errorMessage = 'رقم الهاتف لازم يكون 10 أرقام ويبدأ بصفر';
-      this.loading = false;
-      return;
-    }
-
-    const deviceIdPattern = /^\d+$/; // أرقام فقط
-    if (!deviceIdPattern.test(this.deviceId)) {
-      this.errorMessage = 'Device ID لازم يكون أرقام فقط';
-      this.loading = false;
-      return;
-    }
-
     const userData = {
       fullName: this.username,
       email: this.email,
@@ -58,15 +37,19 @@ export class SignupPage {
 
     this.http.post('https://avico-api.onrender.com/api/users/signup', userData)
       .subscribe({
-        next: (res) => {
-          console.log('✅ User registered:', res);
+        next: (res: any) => {
           this.loading = false;
-          this.router.navigate(['/dashboard']);
+          if (res.success) {
+            // ✅ بعد إرسال الكود نوجّه المستخدم لصفحة verify
+            this.router.navigate(['/verify'], { queryParams: { email: this.email } });
+          } else {
+            this.errorMessage = res.message;
+          }
         },
         error: (err) => {
-          console.error('❌ Error registering user:', err);
           this.loading = false;
-          this.errorMessage = 'فشل التسجيل، تأكد من البيانات';
+          console.error(err);
+          this.errorMessage = 'فشل إرسال الكود';
         }
       });
   }

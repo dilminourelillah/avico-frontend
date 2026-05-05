@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import Chart from 'chart.js/auto';
 
 @Component({
   selector: 'app-dashboard',
@@ -17,6 +16,7 @@ export class DashboardPage implements OnInit {
   temperature: number = 0;
   humidity: number = 0;
   nh3: number = 0;
+  light: number = 0; 
   alerts: any[] = [];
 
   constructor(private router: Router, private http: HttpClient) {}
@@ -24,13 +24,12 @@ export class DashboardPage implements OnInit {
   ngOnInit() {
     this.loadMetrics();
     this.loadAlerts();
-    this.loadChart();
 
-    // تحديث تلقائي كل 10 ثواني
+    // تحديث تلقائي كل 2 ثواني (ممكن تخليه 10 ثواني)
     setInterval(() => {
       this.loadMetrics();
       this.loadAlerts();
-    }, 10000);
+    }, 2000);
   }
 
   loadMetrics() {
@@ -41,6 +40,7 @@ export class DashboardPage implements OnInit {
           this.temperature = m.temperature;
           this.humidity = m.humidity;
           this.nh3 = m.nh3;
+          this.light = m.light;
         }
       });
   }
@@ -85,18 +85,8 @@ export class DashboardPage implements OnInit {
     this.router.navigate(['/new-cycle']);
   }
 
-  loadChart() {
-    new Chart('weeklyChart', {
-      type: 'line',
-      data: {
-        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-        datasets: [
-          { label: 'Temp', data: [30, 31, 29, 30, 32, 31, 30], borderColor: 'red', fill: false },
-          { label: 'Humidity', data: [65, 64, 66, 63, 65, 64, 65], borderColor: 'blue', fill: false },
-          { label: 'NH3', data: [12, 13, 11, 14, 12, 13, 12], borderColor: 'green', fill: false },
-        ],
-      },
-      options: { responsive: true, plugins: { legend: { position: 'bottom' } } },
-    });
+  // ✅ دالة جديدة للانتقال إلى Daily History
+  goToHistory() {
+    this.router.navigate(['/daily-history']);
   }
 }

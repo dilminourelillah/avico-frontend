@@ -36,7 +36,9 @@
 
     <ion-button class="signup-btn" (click)="signup()" [disabled]="loading">
       SIGN UP
-      <ion-spinner *ngIf="loading" name="crescent"></ion-spinner>
+      <ng-container *ngIf="loading">
+        <ion-spinner name="crescent"></ion-spinner>
+      </ng-container>
     </ion-button>
 
     <div *ngIf="errorMessage" class="error-message">

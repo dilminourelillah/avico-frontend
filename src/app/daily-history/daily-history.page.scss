@@ -1,0 +1,36 @@
+.date-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+}
+
+.date-label {
+  font-weight: bold;
+  font-size: 16px;
+  color: #333;
+}
+
+.tabs {
+  margin: 10px;
+}
+
+ion-item h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+ion-item p {
+  font-size: 14px;
+  margin: 0;
+}
+.back-btn {
+  font-size: 28px;   /* يخلي السهم كبير */
+  font-weight: bold;
+}
+
+.custom-title {
+  text-align: center;   /* يخلي النص في الوسط */
+  margin-left: -50px;   /* يقدم النص شوي لليسار */
+}

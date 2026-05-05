@@ -22,6 +22,14 @@ export const routes: Routes = [
     loadComponent: () => import('./new-cycle/new-cycle.page').then(m => m.NewCyclePage)
   },
   {
+    path: 'verify',
+    loadComponent: () => import('./verify/verify.page').then(m => m.VerifyPage)
+  },
+  {
+    path: 'daily-history', // ✅ تعريف صحيح للصفحة الجديدة
+    loadComponent: () => import('./daily-history/daily-history.page').then(m => m.DailyHistoryPage)
+  },
+  {
     path: '',
     redirectTo: 'splash',
     pathMatch: 'full',
