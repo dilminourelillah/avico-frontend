@@ -1,3 +1,26 @@
+ion-content.daily-history {
+  --background: none;
+  background-image: url('/assets/farm.png'); /* الخلفية */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* زر الرجوع */
+.back-btn {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* العنوان في الوسط */
+.custom-title {
+  text-align: center;
+  margin-left: -50px;
+}
+
+/* شريط التاريخ */
 .date-nav {
   display: flex;
   justify-content: space-between;
@@ -8,29 +31,39 @@
 .date-label {
   font-weight: bold;
   font-size: 16px;
-  color: #333;
+  color: #000; /* أسود */
 }
 
 .tabs {
   margin: 10px;
 }
 
+/* نحي الخلفية البيضاء من ion-list */
+ion-list {
+  background: transparent !important;
+}
+
+/* عناصر القائمة (الكروت/البويضات) */
+ion-item {
+  --background: transparent;
+  background: rgba(255, 255, 255, 0.15); /* شفافية أقل (15%) */
+  border-radius: 12px;
+  margin: 6px;
+  box-shadow: none; /* نحي الظل باش يبانوا أخف */
+  -webkit-backdrop-filter: blur(3px); /* Blur أقل */
+  backdrop-filter: blur(3px);
+}
+
+/* النصوص داخل الكروت بالأسود */
 ion-item h2 {
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 4px;
+  color: #000; /* أسود */
 }
 
 ion-item p {
   font-size: 14px;
   margin: 0;
-}
-.back-btn {
-  font-size: 28px;   /* يخلي السهم كبير */
-  font-weight: bold;
-}
-
-.custom-title {
-  text-align: center;   /* يخلي النص في الوسط */
-  margin-left: -50px;   /* يقدم النص شوي لليسار */
+  color: #000; /* أسود */
 }

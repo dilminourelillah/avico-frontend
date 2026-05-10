@@ -15,6 +15,21 @@
 </ion-header>
 
 <ion-content class="dashboard" fullscreen>
+
+  <!-- 🔔 Notifications Banner -->
+  <div class="notifications-container" *ngIf="notifications.length > 0">
+    <div
+      class="notification-banner"
+      [ngClass]="notif.type === 'end' ? 'end-notif' : 'week-notif'"
+      *ngFor="let notif of notifications">
+      <div class="notif-content">
+        <span class="notif-title">{{ notif.title }}</span>
+        <span class="notif-body">{{ notif.body }}</span>
+      </div>
+      <button class="notif-close" (click)="dismissNotification(notif.id)">✕</button>
+    </div>
+  </div>
+
   <!-- Metrics -->
   <div class="metrics-horizontal">
     <div class="metric-card red">
@@ -44,7 +59,7 @@
     {{ alert.message }}
   </div>
 
-  <!-- ✅ زر Daily History في الوسط قبل الكونترولز -->
+  <!-- زر Daily History -->
   <div class="history-container">
     <ion-button expand="block" class="history-btn" (click)="goToHistory()">
       ⏰ VIEW DAILY HISTORY →
@@ -86,9 +101,6 @@
       <div class="buttons-row">
         <ion-button color="primary" size="small" (click)="toggleAutoMode()">Activate</ion-button>
       </div>
-      <p class="auto-note" *ngIf="autoModeActive">
-        Devices adjust automatically based on thresholds.
-      </p>
     </div>
   </div>
 
@@ -96,4 +108,5 @@
   <ion-button expand="block" class="start-cycle-btn" (click)="goToNewCycle()">
     Start New Cycle
   </ion-button>
+
 </ion-content>

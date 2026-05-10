@@ -1,28 +1,25 @@
 <ion-content class="verify" fullscreen>
-  <!-- الجزء الأبيض فوق فيه اللوغو فقط -->
   <div class="top-section">
     <img src="assets/logo.png" alt="App Logo" class="logo" />
   </div>
 
-  <!-- التموج الفاصل -->
   <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
     <path fill="#0d47a1" fill-opacity="1" 
       d="M0,160L48,170.7C96,181,192,203,288,213.3C384,224,480,224,576,213.3C672,203,768,181,864,165.3C960,149,1056,139,1152,144C1248,149,1344,171,1392,181.3L1440,192L1440,320L0,320Z">
     </path>
   </svg>
 
-  <!-- الجزء الأزرق تحت -->
   <div class="bottom-section">
     <h2>Check your email</h2>
     <p>We sent you a 6-digit code. Enter it below to verify your account.</p>
 
     <div class="code-inputs">
-      <ion-input maxlength="1" type="number" [(ngModel)]="code1"></ion-input>
-      <ion-input maxlength="1" type="number" [(ngModel)]="code2"></ion-input>
-      <ion-input maxlength="1" type="number" [(ngModel)]="code3"></ion-input>
-      <ion-input maxlength="1" type="number" [(ngModel)]="code4"></ion-input>
-      <ion-input maxlength="1" type="number" [(ngModel)]="code5"></ion-input>
-      <ion-input maxlength="1" type="number" [(ngModel)]="code6"></ion-input>
+      <input #input1 maxlength="1" type="text" inputmode="numeric" pattern="[0-9]*" [(ngModel)]="code1" (input)="onInput($event, input2)">
+      <input #input2 maxlength="1" type="text" inputmode="numeric" pattern="[0-9]*" [(ngModel)]="code2" (input)="onInput($event, input3)">
+      <input #input3 maxlength="1" type="text" inputmode="numeric" pattern="[0-9]*" [(ngModel)]="code3" (input)="onInput($event, input4)">
+      <input #input4 maxlength="1" type="text" inputmode="numeric" pattern="[0-9]*" [(ngModel)]="code4" (input)="onInput($event, input5)">
+      <input #input5 maxlength="1" type="text" inputmode="numeric" pattern="[0-9]*" [(ngModel)]="code5" (input)="onInput($event, input6)">
+      <input #input6 maxlength="1" type="text" inputmode="numeric" pattern="[0-9]*" [(ngModel)]="code6" (input)="onInput($event, null)">
     </div>
 
     <ion-button class="verify-btn" (click)="verifyCode()" [disabled]="loading">

@@ -1,31 +1,31 @@
-/* ✅ نزع الفراغ الأبيض من فوق وتحت */
-ion-content.dashboard {
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
+ ion-content.dashboard {
+  --background: none;
+  background-image: url('/assets/farm.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .header-title {
   text-align: center;
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
 }
 
+/* Metrics */
 .metrics-horizontal {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 0px;
   flex-wrap: wrap;
+  padding: 8px;
   margin-top: 1vh;
 }
 
 .metric-card {
   flex: 1 1 22%;
-  background: #f1f1f1;
+  background: rgba(241, 241, 241, 0.8);
   border-radius: 12px;
   padding: 12px;
   margin: 4px;
   text-align: center;
-  font-weight: bold;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,16 +41,17 @@ ion-content.dashboard {
   margin-bottom: 4px;
 }
 
-.red { background: #ffcdd2; }
-.blue { background: #bbdefb; }
-.green { background: #c8e6c9; }
-.yellow { background: #fff9c4; }
+/* ألوان الكروت */
+.red    { background: rgba(255, 205, 210, 0.8); }
+.blue   { background: rgba(187, 222, 251, 0.8); }
+.green  { background: rgba(200, 230, 201, 0.8); }
+.yellow { background: rgba(255, 249, 196, 0.8); }
 
 .alert-box {
-  background: #e3f2fd;
-  padding: 10px;
+  background: rgba(227, 242, 253, 0.85);
+  padding: 8px;
   border-radius: 8px;
-  margin: 12px 0;
+  margin: 6px 8px;
   font-size: 14px;
   color: #0d47a1;
   text-align: center;
@@ -59,27 +60,26 @@ ion-content.dashboard {
 .history-container {
   display: flex;
   justify-content: center;
-  margin-top: 0px;     /* فراغ صغير فوق الزر */
-  margin-bottom: 0px;   /* نقصت بزاف الفراغ تحت الزر */
-}
-.history-btn {
- font-weight: bold;
-  border-radius: 25px;
-  background: #0d47a1;
-  color: #fff;
-  --border-radius: 25px;
+  padding: 0 8px;
 }
 
+.history-btn {
+  font-weight: bold;
+  --border-radius: 25px;
+  width: 100%;
+}
+
+/* Controls */
 .controls-horizontal {
   display: flex;
   justify-content: space-between;
-  margin: 4px 0;
   flex-wrap: wrap;
+  padding: 8px;
 }
 
 .control-card {
   flex: 1 1 30%;
-  background: #f9f9f9;
+  background: rgba(249, 249, 249, 0.7);
   border-radius: 12px;
   padding: 12px;
   margin: 4px;
@@ -112,20 +112,93 @@ ion-button {
 
 .start-cycle-btn {
   font-weight: bold;
-  border-radius: 25px;
-  background: #0d47a1;
-  color: #fff;
   --border-radius: 25px;
+  margin: 8px;
 }
 
 .auto-card {
-  background: #f9f9f9;
+  background: rgba(249, 249, 249, 0.8);
   color: #0d47a1;
 }
 
 .auto-note {
-  font-size: 12px;
-  margin-top: 6px;
-  text-align: center;
+  display: none !important;
+}
+/* 🔔 Notifications */
+.notifications-container {
+  padding: 8px 8px 0 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.notification-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.92);
+  border-left: 4px solid #1565c0;
+  border-radius: 10px;
+  padding: 10px 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  animation: slideDown 0.3s ease;
+}
+
+.notification-banner.week-notif {
+  border-left-color: #1565c0;
+}
+
+.notification-banner.end-notif {
+  border-left-color: #2e7d32;
+  background: rgba(232, 245, 233, 0.95);
+}
+
+.notif-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.notif-title {
+  font-size: 13px;
   font-weight: bold;
+  color: #0d47a1;
+  margin-bottom: 2px;
+}
+
+.notification-banner.end-notif .notif-title {
+  color: #1b5e20;
+}
+
+.notif-body {
+  font-size: 12px;
+  color: #37474f;
+}
+
+.notif-close {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #90a4ae;
+  cursor: pointer;
+  padding: 4px 6px;
+  line-height: 1;
+  border-radius: 50%;
+  transition: background 0.15s;
+
+  &:hover {
+    background: rgba(0,0,0,0.08);
+    color: #37474f;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

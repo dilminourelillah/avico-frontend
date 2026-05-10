@@ -1,25 +1,24 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <!-- ✅ زر الرجوع على اليسار بسهم إيموجي كبير -->
     <ion-buttons slot="start">
       <ion-button (click)="goToDashboard()" class="back-btn">
         ←
       </ion-button>
     </ion-buttons>
-
-    <!-- ✅ العنوان في الوسط مضبوط -->
     <ion-title class="custom-title">Daily History</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <!-- باقي الصفحة كما هي -->
+<ion-content class="daily-history" fullscreen>
+
+  <!-- التنقل بين الأيام -->
   <div class="date-nav">
     <ion-button size="small" (click)="previousDay()">&lt; Previous</ion-button>
     <div class="date-label">{{ selectedDate | date:'MMMM d, y' }}</div>
     <ion-button size="small" (click)="nextDay()">Next &gt;</ion-button>
   </div>
 
+  <!-- Tabs -->
   <div class="tabs">
     <ion-segment value="today">
       <ion-segment-button value="today">Today</ion-segment-button>
@@ -28,18 +27,24 @@
     </ion-segment>
   </div>
 
-  <ion-modal trigger="openCalendar">
+  <!-- Calendar Modal -->
+  <ion-modal trigger="openCalendar" #calendarModal>
     <ng-template>
       <ion-content>
         <ion-datetime
           presentation="date"
-          [(ngModel)]="selectedDate"
-          (ionChange)="loadHistory(selectedDate)">
+          [value]="selectedDate"
+          showDefaultButtons="true"
+          doneText="OK"
+          cancelText="Cancel"
+          (ionChange)="onDateChange($event)"
+          (ionCancel)="calendarModal.dismiss()">
         </ion-datetime>
       </ion-content>
     </ng-template>
   </ion-modal>
 
+  <!-- قائمة الأحداث -->
   <ion-list>
     <ion-item *ngFor="let h of history">
       <div slot="start">{{ getEmoji(h.event) }}</div>
@@ -58,4 +63,5 @@
       </ion-label>
     </ion-item>
   </ion-list>
+
 </ion-content>

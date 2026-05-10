@@ -119,3 +119,20 @@
     font-size: 12px;
   }
 }
+/* Fix ion-input visibility */
+.input-item {
+  --color: #000000;
+  --placeholder-color: #666666;
+  --placeholder-opacity: 1;
+  --padding-start: 15px;
+  --inner-padding-end: 15px;
+  --min-height: 45px;
+  
+  ion-input {
+    --color: #000000;
+    --placeholder-color: #666666;
+    color: #000000 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+}

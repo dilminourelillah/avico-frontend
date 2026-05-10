@@ -1,11 +1,8 @@
 <ion-header>
   <ion-toolbar color="primary" class="header-bar">
-    <!-- زر الرجوع -->
     <ion-buttons slot="start">
       <ion-button (click)="goBack()" class="back-btn">←</ion-button>
     </ion-buttons>
-
-    <!-- العنوان -->
     <div class="header-title">
       Start New Cycle
     </div>
@@ -26,7 +23,11 @@
   <div class="field-section">
     <label class="field-label">📅 Start Date</label>
     <ion-item class="input-item small-calendar">
-      <ion-datetime [(ngModel)]="startDate" presentation="date" placeholder="Select date..."></ion-datetime>
+      <ion-datetime
+        presentation="date"
+        (ionChange)="onDateChange($event)"
+        placeholder="Select date...">
+      </ion-datetime>
     </ion-item>
   </div>
 

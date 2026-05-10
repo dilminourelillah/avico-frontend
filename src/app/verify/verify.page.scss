@@ -5,7 +5,7 @@
 .top-section {
   text-align: center;
   background: #fff;
-  padding: 40px 20px;
+  padding: 40px 20px 0 20px;
 }
 
 .logo {
@@ -22,7 +22,7 @@
   background: #0d47a1;
   padding: 40px 20px;
   text-align: center;
-  min-height: 50vh;
+  min-height: 100vh;
 }
 
 .bottom-section h2 {
@@ -44,21 +44,23 @@
   margin-bottom: 20px;
 }
 
-.code-inputs ion-input {
-  width: 40px;
-  height: 50px;
+.code-inputs input {
+  width: 45px;
+  height: 55px;
   text-align: center;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
   border-radius: 8px;
-  --background: #fff;
+  border: none;
+  background: #fff;
   color: #0d47a1;
+  outline: none;
 }
 
 .verify-btn {
-  background: #fff;
-  color: #fff;
-  border-radius: 25px;
+  --background: #ffffff;
+  --color: #0d47a1;
+  --border-radius: 25px;
   font-weight: bold;
   margin-top: 12px;
   width: 100%;

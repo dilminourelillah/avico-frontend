@@ -1,3 +1,13 @@
+ion-content.new-cycle {
+  --background: none;
+  background-image: url('/assets/farm.png'); /* الخلفية */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
 /* الهيدر */
 .header-bar {
   display: flex;
@@ -24,6 +34,7 @@
   text-align: center;
 }
 
+/* الحقول */
 .field-section {
   margin-top: 3vh;
   margin-bottom: 3vh;
@@ -39,19 +50,29 @@
   padding-left: 15px;
 }
 
+/* الكروت تاع الإدخال */
 .input-item {
   border-radius: 12px;
-  --background: #ffffff;
+  --background: transparent;
+  background: rgba(255, 255, 255, 0.15); /* شفافية أكثر */
   --border-radius: 12px;
   padding-left: 8px;
+  -webkit-backdrop-filter: blur(2px); /* Blur أخف */
+  backdrop-filter: blur(2px);
 }
 
+/* الكالوندريي */
 .small-calendar ion-datetime {
   font-size: 3.5vw;
   max-font-size: 14px;
   padding-left: 15px;
+  background: rgba(255, 255, 255, 0.1) !important; /* شفافية أكبر */
+  -webkit-backdrop-filter: blur(1px); /* Blur خفيف بزاف */
+  backdrop-filter: blur(1px);
+  color: #000; /* النصوص بالأسود */
 }
 
+/* مدة الدورة */
 .duration-section {
   margin: 3vh 0;
   text-align: center;
@@ -63,6 +84,7 @@
   gap: 2vw;
 }
 
+/* زر بدء الدورة */
 .begin-btn {
   margin-top: 4vh;
   font-weight: bold;
@@ -75,10 +97,11 @@
   height: 6vh;
 }
 
+/* نص صغير */
 .footer-note {
   text-align: center;
   font-size: 3.5vw;
   max-font-size: 14px;
-  color: #555;
+  color: #000;
   margin-top: 2vh;
 }

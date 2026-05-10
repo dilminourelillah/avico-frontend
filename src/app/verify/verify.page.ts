@@ -1,14 +1,20 @@
 import { Component } from '@angular/core';
-import { IonicModule, NavController } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { NavController } from '@ionic/angular/standalone';
+import {
+  IonContent, IonButton, IonSpinner
+} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-verify',
   standalone: true,
-  imports: [IonicModule, FormsModule, HttpClientModule, CommonModule],
+  imports: [
+    CommonModule, FormsModule, HttpClientModule,
+    IonContent, IonButton, IonSpinner
+  ],
   templateUrl: './verify.page.html',
   styleUrls: ['./verify.page.scss'],
 })
@@ -32,6 +38,13 @@ export class VerifyPage {
     this.route.queryParams.subscribe(params => {
       this.email = params['email'];
     });
+  }
+
+  onInput(event: any, nextInput: any) {
+    const value = event.target.value;
+    if (value.length >= 1 && nextInput) {
+      nextInput.focus();
+    }
   }
 
   verifyCode() {

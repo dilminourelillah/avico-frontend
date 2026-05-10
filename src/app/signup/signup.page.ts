@@ -1,14 +1,19 @@
 import { Component } from '@angular/core';
-import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { CommonModule } from '@angular/common'; // ✅ لازم هذا
+import { CommonModule } from '@angular/common';
+import {
+  IonContent, IonItem, IonInput, IonButton, IonSpinner
+} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [IonicModule, FormsModule, HttpClientModule, CommonModule], // ✅ زيد هنا
+  imports: [
+    CommonModule, FormsModule, HttpClientModule,
+    IonContent, IonItem, IonInput, IonButton, IonSpinner
+  ],
   templateUrl: './signup.page.html',
   styleUrls: ['./signup.page.scss'],
 })
@@ -40,7 +45,6 @@ export class SignupPage {
         next: (res: any) => {
           this.loading = false;
           if (res.success) {
-            // ✅ بعد إرسال الكود نوجّه المستخدم لصفحة verify
             this.router.navigate(['/verify'], { queryParams: { email: this.email } });
           } else {
             this.errorMessage = res.message;
